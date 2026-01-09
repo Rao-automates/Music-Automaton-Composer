@@ -1,54 +1,69 @@
+![Music Automaton Composer](presentation_assets/hero-banner.png)
+
+<div align="center">
+
 # Music Automaton Composer
 
-A procedural melody generator built with React and the Web Audio API. This application uses Finite State Automata principles to generate musical sequences in real-time based on selected scales and probability matrices.
+**A procedural melody generator built with React and the Web Audio API.**
+<br>
+*Explore the intersection of Music Theory and Finite State Automata.*
+</div>
 
-## Features
+---
 
-- **Procedural Melody Generation**: Uses a Markov chain-like approach (Finite State Automaton) to navigate between notes (states).
-- **Dynamic Controls**:
-  - **Tempo**: Adjust playback speed (60-200 BPM).
-  - **Instruments**: Choose from Sine, Triangle, Square, and Sawtooth waveforms.
-  - **Scales**: Select from various musical scales including Major, Minor, Pentatonic, Blues, Dorian, Lydian, Mixolydian, Phrygian, Harmonic Minor, and Whole Tone.
-  - **Melody Resolution**: Control how frequently the melody attempts to return to the root note (Tonic).
-- **Visualizations**:
-  - **Active State**: Visual indication of the current note playing.
-  - **Melody Sequence**: A history view of the generated notes.
-  - **Pulse Effects**: Visual feedback synced with the beat.
-- **Responsive UI**: Modern interface with glassmorphism effects and dark mode aesthetics.
+**Music Automaton Composer** is a real-time procedural music generator that visualizes the logic of melody. By applying **Finite State Automata (FSA)** principles to musical scales, it generates infinite, evolving melodies that follow strict harmonic rules while allowing for organic variation.
 
-## Technology Stack
+## ![Features](presentation_assets/features-header.png)
 
-- **React**: UI library.
-- **Vite**: Build tool and development server.
-- **Web Audio API**: Real-time sound synthesis.
-- **TailwindCSS**: Styling.
-- **Lucide React**: Icons.
+*   **🎵 Procedural Melody Generation**: Utilizes a Markov chain-inspired FSA to navigate between musical notes (states), creating unique sequences every time.
+*   **🎹 Dynamic Synthesis**: Built on the **Web Audio API**, generating sounds in real-time using selectable waveforms (Sine, Square, Triangle, Sawtooth).
+*   **🎛️ Live Controls**:
+    *   **Tempo**: fluidly adjust from 60 to 200 BPM.
+    *   **Scales**: Switch instantly between Major, Minor, Pentatonic, Blues, Dorian, Lydian, Mixolydian, Phrygian, Harmonic Minor, and Whole Tone.
+    *   **Resolution**: Control the "Tonic Pull" — how often the melody resolves home.
+*   **✨ Visual Feedback**:
+    *   **Glassmorphism UI**: A beautiful, modern dark-mode interface.
+    *   **Active State Visualization**: See exactly which note is playing in the network.
+    *   **Pulse Effects**: Visual beats that sync with the rhythm.
 
-## Installation
+## 🛠️ Technology Stack
 
-1.  Clone the repository or navigate to the project directory.
-2.  Install dependencies:
+*   **Core**: [React](https://reactjs.org/)
+*   **Build**: [Vite](https://vitejs.dev/)
+*   **Audio**: Web Audio API
+*   **Styling**: [TailwindCSS](https://tailwindcss.com/)
+*   **Icons**: [Lucide React](https://lucide.dev/)
 
+## 🚀 Getting Started
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/music-automaton.git
+    cd music-automaton
+    ```
+
+2.  **Install dependencies**
     ```bash
     npm install
     ```
 
-## Usage
+### Usage
 
-Start the development server:
+1.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
 
-```bash
-npm run dev
-```
+2.  **Open the application**
+    Navigate to `http://localhost:5173` in your browser.
 
-Open your browser and navigate to the URL shown (usually `http://localhost:5173`).
+## 🎼 How It Works
 
-### How It Works
-
-1.  **States & Notes**: Each state in the automaton corresponds to a note in the selected scale.
-2.  **Transitions**: The application calculates the next note based on a probability matrix.
-    - **Step Up/Down**: High probability to move to adjacent notes.
-    - **Skip**: Lower probability to jump intervals.
-    - **Return to Tonic**: Controlled probability to return to the root note based on the "Resolution" setting.
-3.  **synthesis**: The Web Audio API creates oscillators on the fly to play the calculated frequency for each note.
-
+1.  **States & Notes**: Every note in the selected scale exists as a "state" in the automaton.
+2.  **Probability Matrix**: When a note plays, the system calculates the next move based on weighted probabilities:
+    *   **Step Motion**: High probability to move to adjacent notes (smooth melody).
+    *   **Leaps**: Lower probability to jump larger intervals.
+    *   **Resolution**: A dynamic probability that increases over time to pull the melody back to the Tonic (root note).
+3.  **Real-time Synthesis**: The browser synthesizes the calculated frequency instantly—no samples, just pure math and sound.
