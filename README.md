@@ -1,4 +1,4 @@
-![Music Automaton Composer](hero-banner.png)
+![Music Automaton Composer](waveform_viz.png)
 
 <div align="center">
 
@@ -13,7 +13,7 @@
 
 **Music Automaton Composer** is a real-time procedural music generator that visualizes the logic of melody. By applying **Finite State Automata (FSA)** principles to musical scales, it generates infinite, evolving melodies that follow strict harmonic rules while allowing for organic variation.
 
-## ![Features](features-header.png)
+## ![Features](hero-banner.png)
 
 *   **🎵 Procedural Melody Generation**: Utilizes a Markov chain-inspired FSA to navigate between musical notes (states), creating unique sequences every time.
 *   **🎹 Dynamic Synthesis**: Built on the **Web Audio API**, generating sounds in real-time using selectable waveforms (Sine, Square, Triangle, Sawtooth).
